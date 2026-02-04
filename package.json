@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir build",
+    "build": "rm -rf build && mkdir -p build && cp -r index.html style.css img build/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,7 @@
   "homepage": "https://tjhower.github.io/portfolio-site",
   "devDependencies": {
     "gh-pages": "^6.3.0",
-    "parcel": "^2.16.4"
+    "parcel": "^2.16.4",
+    "sharp": "^0.34.5"
   }
 }
