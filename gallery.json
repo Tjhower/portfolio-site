@@ -1,0 +1,57 @@
+[
+  {
+    "src": "img/Kayak-Trip.JPG",
+    "title": "Kayak Trip",
+    "description": "A peaceful kayaking scene."
+  },
+  {
+    "src": "img/Family Portrait.png",
+    "title": "Family Portrait",
+    "description": "Stylized portrait artwork."
+  },
+  {
+    "src": "img/Pro-8_Microscopicv3_HowerTJ.png",
+    "title": "Microscopic Artwork",
+    "description": "Abstract microscopic visualization."
+  },
+  {
+    "src": "img/Columbus.PNG",
+    "title": "Columbus",
+    "description": "Little Clown Boy >:)"
+  },
+  {
+    "src": "img/Assignment_003_Maya1_TJ_Hower.jpg",
+    "title": "Pier Sunset",
+    "description": "Maya study of Mark Boedges' \"End of a Good Day\" ."
+  },
+  {
+    "src": "img/Assignment_003_Maya3_TJ_Hower.jpg",
+    "title": "House Exterior",
+    "description": "3D modeled study of Davood Moghaddami \"End of Winter\" ."
+  },
+  {
+    "src": "img/Assignment_003_Maya4_TJ_Hower.jpg",
+    "title": "Castle",
+    "description": "Fantasy castle render."
+  },
+  {
+    "src": "img/Assignment_004_TJ_Hower_1.jpg",
+    "title": "Cowboy",
+    "description": "Western character scene."
+  },
+  {
+    "src": "img/Assignment_004_TJ_Hower_4.jpg",
+    "title": "Ladies Inside",
+    "description": "Interior scene composition."
+  },
+  {
+    "src": "img/Assignment_004_TJ_Hower_5.jpg",
+    "title": "Ladies Outside",
+    "description": "Exterior lighting scene."
+  },
+  {
+    "src": "img/Assignment_004_TJ_Hower_3.jpg",
+    "title": "Street",
+    "description": "Street environment render."
+  }
+]

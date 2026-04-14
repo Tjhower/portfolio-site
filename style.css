@@ -1,6 +1,6 @@
-/* -------------------------
+/*
    GLOBAL STYLES
---------------------------*/
+*/
 * {
   margin: 0;
   padding: 0;
@@ -8,17 +8,15 @@
 }
 
 body {
-  /* use Special Elite for body text with Inter as a fallback */
   font-family: 'Special Elite', 'Inter', sans-serif;
   background-color: #0e0e0e;
   color: #f7e820;
 }
 
-/* Center content and add side margins */
 .site {
-  max-width: 2300px; /* keeps content readable on large screens */
-  margin: 0 auto;    /* centers the site */
-  padding: 0 4vw;    /* retain side padding on smaller screens */
+  max-width: 2300px;
+  margin: 0 auto;
+  padding: 0 4vw;
 }
 
 a {
@@ -26,109 +24,70 @@ a {
   color: inherit;
 }
 
-/* -------------------------
-   HERO / BANNER
---------------------------*/
+/* HERO / BANNER */
 .hero {
-  /* texture background from the project `img/` folder */
   background-image: url("img/herobanner-background.png");
-  background-size: cover;      /* scale to fill the hero area */
-  background-position: bottom; /* keep the center of the texture visible */
+  background-size: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
-  background-color: #f2f0e4;   /* fallback color */
-  padding: 3rem 4vw; /* use viewport-based side padding so content sits close to the screen */
+  background-color: #f2f0e4;
+  padding: 3rem 4vw;
   display: flex;
   align-items: center;
-  justify-content: center; /* center profile and text horizontally */
+  justify-content: center;
   gap: 2rem;
 }
 
-/* Make the profile container larger so Me-Sprite is bigger */
 .profile-img {
-  width: 300px; /* increased from 400px */
+  width: 300px;
   height: 300px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
 }
 
-/* Ensure the image fills the container while keeping its proportions */
 .profile-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* keeps whole image visible */
+  object-fit: contain;
   border-radius: 4px;
 }
 
-/* center hero text */
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
 }
 
 .hero-text h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 5rem;
-  letter-spacing: 2px;
 }
+
 .hero-text h2 {
-  font-family: 'Special Elite', cursive;
   margin-top: 0.5rem;
   font-size: 2.5rem;
-  font-weight: 600;
   color: #f20884;
 }
 
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  .hero {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem 4vw;
-  }
-  .profile-img {
-    width: 220px; /* slightly larger on small screens */
-    height: 220px;
-  }
-  .hero-text h1 {
-    font-size: 1.6rem;
-  }
-
-  /* Nav becomes stacked on small screens and search moves below */
-  nav {
-    flex-direction: column;
-    padding: 0.75rem 1rem;
-    gap: 0.5rem;
-  }
-  .search-bar {
-    position: static;
-    transform: none;
-    margin-top: 0.25rem;
-  }
-}
-/* -------------------------
-   NAVIGATION BAR
---------------------------*/
+/*
+   NAVIGATION
+*/
 nav {
   background-color: #0e0e0e;
   padding: 0.75rem 2rem;
   display: flex;
-  justify-content: center; /* center nav links */
+  justify-content: center;
   align-items: center;
-  position: relative; /* allow positioning of search bar */
+  position: relative;
 }
 
 .nav-links {
   display: flex;
   gap: 1.5rem;
-  font-weight: 600;
-  font-family: 'Special Elite', cursive; /* typewriter-styled font */
-  font-size: 1rem;
+  font-family: 'Special Elite', cursive;
 }
 
 .nav-links a:hover {
@@ -146,73 +105,51 @@ nav {
   padding: 0.4rem 0.6rem;
   border: 2px solid #f7e820;
   border-radius: 6px;
-  background-color: rgba(247,232,32,0.25); /* 25% opacity of the same yellow */
+  background-color: rgba(247,232,32,0.25);
 }
 
-/* -------------------------
-   GALLERY
---------------------------*/
+
+/* GALLERY */
+
 .gallery {
   padding: 3rem 2rem;
-  /* paper texture background */
   background-image: url("img/Texturelabs_Paper_284M.jpg");
-  background-repeat: repeat; /* tile the paper texture for a subtle effect */
-  background-size: auto;
-  background-position: center;
-  background-color: #f7f3eb; /* light fallback color */
+  background-repeat: repeat;
+  background-color: #f7f3eb;
 }
-
-
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1.5rem;
-  /* limit to 4 columns at most; keeps layout responsive */
-  max-width: calc(1800px + 2rem); /* 4 * 220px + 3 * 1.5rem */
-  margin: 0 auto; /* center grid when there's extra space */
-  grid-auto-flow: row; /* ensure items flow row by row */
-  grid-auto-rows: auto; /* let rows size based on content */
-  align-items: start; /* don't stretch items vertically—preserve image ratio */
+  column-count: 3;
+  column-gap: 1.5rem;
+  max-width: 1800px;
+  margin: 0 auto;
 }
+
 
 .gallery-item {
-  width: 100%;
-  /* no fixed aspect-ratio: the item height follows the image's intrinsic ratio */
   border-radius: 12px;
-  overflow: hidden; /* hide overflow if images are placed inside a fixed canvas */
-  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Optional helper classes: apply to individual items when you want a fixed canvas
-   but still avoid cropping the image (it will be letterboxed via object-fit: contain)
-   e.g. <div class="gallery-item ratio-4-3"> ... </div> */
-.ratio-4-3 { aspect-ratio: 4 / 3; }
-.ratio-16-9 { aspect-ratio: 16 / 9; }
-.ratio-1-1 { aspect-ratio: 1 / 1; }
+/* Hover effect (new) */
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 
 .gallery-item img {
-  display: block;
   width: 100%;
-  height: auto; /* preserve intrinsic aspect ratio and avoid cropping */
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  display: block;
 }
 
-/* When using a fixed-ratio helper class, use contain so images fit the canvas without cropping */
-.ratio-4-3 img,
-.ratio-16-9 img,
-.ratio-1-1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* show whole image inside the fixed canvas */
-  object-position: center;
-  background-color: #f7f3eb; /* subtle letterbox background */
-} 
-
-/* -------------------------
+/*
    FOOTER
---------------------------*/
+*/
 footer {
   background-color: #0e0e0e;
   padding: 2rem;
@@ -220,19 +157,106 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  font-size: 0.9rem;
-  text-align: center;       /* center text inside each grid cell */
-  justify-items: center;    /* center grid items horizontally */
+  text-align: center;
 }
 
 footer h3 {
   margin-bottom: 0.5rem;
-  font-family: 'Press Start 2P', cursive; /* typewriter font for section titles */
+  font-family: 'Press Start 2P', cursive;
 }
+
 .socials a {
   display: block;
   margin-top: 0.25rem;
 }
-.socials a:hover {
-  text-decoration: underline;
+
+/*MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding: 40px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 85%;
+  max-height: 80vh;
+  border-radius: 8px;
+  animation: zoomIn 0.3s ease;
+}
+
+/* Caption */
+#modal-caption {
+  text-align: center;
+  color: #f7e820;
+  margin-top: 1rem;
+}
+
+#modal-caption h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f7e820;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close:hover {
+  color: #f20884;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); }
+  to { transform: scale(1); }
+}
+
+/*
+   MOBILE
+*/
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    position: static;
+    transform: none;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    max-width: 95%;
+  }
 }

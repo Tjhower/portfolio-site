@@ -7,14 +7,14 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600&family=Special+Elite&display=swap" rel="stylesheet">
 
-  <!-- Link to external CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="site">
 
-  <!-- HERO / BANNER -->
+  <!-- HERO -->
   <section class="hero">
     <div class="profile-img">
       <img src="img/me.png" alt="Me">
@@ -26,7 +26,7 @@
     </div>
   </section>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav>
     <div class="nav-links">
       <a href="#">Home</a>
@@ -43,42 +43,7 @@
 
   <!-- GALLERY -->
   <section class="gallery">
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="img/Kayak-Trip.JPG" alt="Kayak Trip">
-      </div>
-      <div class="gallery-item">
-        <img src="img/Family Portrait.png" alt="Family Portrait">
-      </div>
-      <div class="gallery-item">
-        <img src="img/Pro-8_Microscopicv3_HowerTJ.png" alt="Microscopic Artwork">
-      </div>
-       <div class="gallery-item">
-        <img src="img/Columbus.PNG" alt="Columbus">
-      </div>
-      <div class="gallery-item">
-        <img src="img/Assignment_003_Maya1_TJ_Hower.jpg" alt="Pier Sunrise">
-      </div>
-      <div class="gallery-item">
-        <img src="img/Assignment_003_Maya3_TJ_Hower.jpg" alt="House Exterior">
-      </div>
-      <div class="gallery-item">
-        <img src="img/Assignment_003_Maya4_TJ_Hower.jpg" alt="Castle">
-      </div>
-      <div class="gallery-item"> 
-        <img src="img/Assignment_004_TJ_Hower_1.jpg" alt="Cowboy">
-      </div>
-      <div class="gallery-item"> 
-        <img src="img/Assignment_004_TJ_Hower_4.jpg" alt="Ladies Inside">
-      </div>
-      <div class="gallery-item"> 
-        <img src="img/Assignment_004_TJ_Hower_5.jpg" alt="Ladies Outside">
-      </div>
-      <div class="gallery-item"> 
-        <img src="img/Assignment_004_TJ_Hower_3.jpg" alt="Street">
-      </div>
-    </div>
+    <div class="gallery-grid" id="gallery"></div>
   </section>
 
   <!-- FOOTER -->
@@ -105,5 +70,15 @@
   </footer>
 
   </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="modal-caption"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
